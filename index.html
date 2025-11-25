@@ -12,7 +12,7 @@
     font-family: system-ui, sans-serif;
     margin: 0;
     padding: 16px;
-    background: #f5f5f5; /* ESKİ AÇIK GRİ ARKA PLAN KALDI */
+    background: #f5f5f5; /* Açık gri arka plan */
     color: #111;
   }
 
@@ -104,6 +104,13 @@
     border-radius: 999px;
     padding: 6px 12px;
     display: block;
+    cursor: pointer;
+    transition: all .2s ease;
+  }
+
+  .site-logo:hover {
+    transform: scale(1.06);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.18);
   }
 
   /* METİN */
@@ -375,6 +382,7 @@ function renderBonuses() {
         <img class="site-logo"
              src="${b.logoUrl}"
              alt="${b.site}"
+             onclick="window.open('${b.url}', '_blank')"
              onerror="this.style.visibility='hidden';">
       </div>
 
@@ -385,7 +393,9 @@ function renderBonuses() {
       </div>
 
       <div class="bonus-right">
-        <button class="btn" onclick="window.location.href='${b.url}'">Siteye Git</button>
+        <button class="btn" onclick="window.open('${b.url}', '_blank')">
+          Siteye Git
+        </button>
       </div>
     `;
 
